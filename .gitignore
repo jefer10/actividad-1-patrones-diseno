@@ -1,0 +1,14 @@
+/target/
+*.class
+
+# Configuración local de los editores
+/.idea/
+/.vscode/
+*.iml
+
+# Archivos locales
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
