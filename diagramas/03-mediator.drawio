@@ -1,2 +1,80 @@
 <?xml version='1.0' encoding='utf-8'?>
-<mxfile host="app.diagrams.net" modified="2026-11-13T00:00:00.000Z" agent="ChatGPT" version="24.7.17" type="device"><diagram id="03-mediator" name="03-mediator"><mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1150" math="0" shadow="0"><root><mxCell id="0" /><mxCell id="1" parent="0" /><mxCell id="heading" value="Ejercicio 3 - Mediator (comportamiento)" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=25;fontColor=#24314F;" vertex="1" parent="1"><mxGeometry x="65" y="15" width="750" height="45" as="geometry" /></mxCell><mxCell id="MediadorChat" value="&lt;div style=&quot;font-size:13px;font-family:Helvetica,Arial;text-align:left;line-height:1.6&quot;&gt;&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center;padding:8px&quot;&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&amp;lt;br&amp;gt;MediadorChat&lt;/div&gt;&lt;hr style=&quot;margin:0&quot;/&gt;&lt;div style=&quot;padding:7px 11px&quot;&gt;&amp;amp;nbsp;&lt;/div&gt;&lt;hr style=&quot;margin:0&quot;/&gt;&lt;div style=&quot;padding:7px 11px&quot;&gt;+registrar(usuario: Usuario): void&amp;lt;br&amp;gt;+retirar(usuario: Usuario): void&amp;lt;br&amp;gt;+enviarMensaje(remitente: Usuario, mensaje: String): void&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8EEFC;strokeColor=#4F6FBB;strokeWidth=1.6;align=left;verticalAlign=top;spacing=0;overflow=fill;" vertex="1" parent="1"><mxGeometry x="100" y="120" width="350" height="150" as="geometry" /></mxCell><mxCell id="SalaChat" value="&lt;div style=&quot;font-size:13px;font-family:Helvetica,Arial;text-align:left;line-height:1.6&quot;&gt;&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center;padding:8px&quot;&gt;SalaChat&lt;/div&gt;&lt;hr style=&quot;margin:0&quot;/&gt;&lt;div style=&quot;padding:7px 11px&quot;&gt;-participantes: Set&amp;lt;Usuario&amp;gt;&lt;/div&gt;&lt;hr style=&quot;margin:0&quot;/&gt;&lt;div style=&quot;padding:7px 11px&quot;&gt;+registrar(usuario: Usuario): void&amp;lt;br&amp;gt;+retirar(usuario: Usuario): void&amp;lt;br&amp;gt;+enviarMensaje(remitente: Usuario, mensaje: String): void&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E9F5EE;strokeColor=#4C9369;strokeWidth=1.6;align=left;verticalAlign=top;spacing=0;overflow=fill;" vertex="1" parent="1"><mxGeometry x="550" y="120" width="365" height="150" as="geometry" /></mxCell><mxCell id="Usuario" value="&lt;div style=&quot;font-size:13px;font-family:Helvetica,Arial;text-align:left;line-height:1.6&quot;&gt;&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center;padding:8px&quot;&gt;Usuario&lt;/div&gt;&lt;hr style=&quot;margin:0&quot;/&gt;&lt;div style=&quot;padding:7px 11px&quot;&gt;-nombre: String&amp;lt;br&amp;gt;-mediador: MediadorChat&amp;lt;br&amp;gt;-recibidos: List&amp;lt;String&amp;gt;&lt;/div&gt;&lt;hr style=&quot;margin:0&quot;/&gt;&lt;div style=&quot;padding:7px 11px&quot;&gt;+enviar(mensaje: String): void&amp;lt;br&amp;gt;+recibir(remitente: String, mensaje: String): void&amp;lt;br&amp;gt;+getRecibidos(): List&amp;lt;String&amp;gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E9F5EE;strokeColor=#4C9369;strokeWidth=1.6;align=left;verticalAlign=top;spacing=0;overflow=fill;" vertex="1" parent="1"><mxGeometry x="550" y="500" width="350" height="192" as="geometry" /></mxCell><mxCell id="edge_MediadorChat_SalaChat" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=1.8;dashed=1;startArrow=block;startFill=0;endArrow=none;endFill=0;fontSize=12;fontColor=#475569;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="MediadorChat" target="SalaChat"><mxGeometry relative="1" as="geometry" /></mxCell><mxCell id="edge_Usuario_MediadorChat" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=1.8;dashed=0;startArrow=none;startFill=0;endArrow=open;endFill=0;fontSize=12;fontColor=#475569;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="Usuario" target="MediadorChat"><mxGeometry relative="1" as="geometry" /></mxCell><mxCell id="edge_SalaChat_Usuario" value="administra" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748B;strokeWidth=1.8;dashed=0;startArrow=diamond;startFill=0;endArrow=none;endFill=0;fontSize=12;fontColor=#475569;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="SalaChat" target="Usuario"><mxGeometry relative="1" as="geometry" /></mxCell></root></mxGraphModel></diagram></mxfile>
+<mxfile host="app.diagrams.net" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="mediator-corregido" name="Ejercicio 3 – Mediator (comportamiento)">
+    <mxGraphModel dx="1700" dy="1050" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2030" pageHeight="1160" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cell1" value="Ejercicio 3 – Mediator (comportamiento)" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Arial;fontColor=#17253A;fontSize=28;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="62" y="26" width="1900" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cell2" value="Diagrama de clases UML · Implementación Java" style="text;html=0;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Arial;fontColor=#58677C;fontSize=15;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="64" y="74" width="1900" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="cell3" value="" style="rounded=1;html=0;arcSize=7;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#5B7DC4;strokeWidth=2;container=1;collapsible=0;connectable=1;" vertex="1" parent="1">
+          <mxGeometry x="635" y="155" width="790" height="183" as="geometry" />
+        </mxCell>
+        <mxCell id="cell4" value="«interface»&#10;MediadorChat" style="rounded=0;whiteSpace=wrap;html=0;fontFamily=Arial;fontColor=#17253A;fontSize=19;fontStyle=1;align=center;verticalAlign=middle;fillColor=#EBF1FF;strokeColor=none;spacing=5;" vertex="1" parent="cell3">
+          <mxGeometry x="2" y="2" width="786" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cell5" value="" style="rounded=0;fillColor=#5B7DC4;strokeColor=none;" vertex="1" parent="cell3">
+          <mxGeometry x="0" y="75" width="790" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="cell6" value="" style="rounded=0;fillColor=#5B7DC4;strokeColor=none;" vertex="1" parent="cell3">
+          <mxGeometry x="0" y="96" width="790" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="cell7" value="+ registrar(usuario: Usuario): void&#10;+ retirar(usuario: Usuario): void&#10;+ enviarMensaje(remitente: Usuario, mensaje: String): void" style="text;html=0;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontColor=#17253A;fontSize=17;align=left;verticalAlign=top;spacingLeft=13;spacingTop=2;strokeColor=none;fillColor=none;" vertex="1" parent="cell3">
+          <mxGeometry x="0" y="103" width="790" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cell8" value="" style="rounded=1;html=0;arcSize=7;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#4A9772;strokeWidth=2;container=1;collapsible=0;connectable=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="565" width="850" height="237" as="geometry" />
+        </mxCell>
+        <mxCell id="cell9" value="«final»&#10;SalaChat" style="rounded=0;whiteSpace=wrap;html=0;fontFamily=Arial;fontColor=#17253A;fontSize=19;fontStyle=1;align=center;verticalAlign=middle;fillColor=#E8F5ED;strokeColor=none;spacing=5;" vertex="1" parent="cell8">
+          <mxGeometry x="2" y="2" width="846" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cell10" value="" style="rounded=0;fillColor=#4A9772;strokeColor=none;" vertex="1" parent="cell8">
+          <mxGeometry x="0" y="75" width="850" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="cell11" value="- participantes: Set&lt;Usuario&gt;" style="text;html=0;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontColor=#17253A;fontSize=17;align=left;verticalAlign=top;spacingLeft=13;spacingTop=2;strokeColor=none;fillColor=none;" vertex="1" parent="cell8">
+          <mxGeometry x="0" y="83" width="850" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="cell12" value="" style="rounded=0;fillColor=#4A9772;strokeColor=none;" vertex="1" parent="cell8">
+          <mxGeometry x="0" y="125" width="850" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="cell13" value="+ registrar(usuario: Usuario): void&#10;+ retirar(usuario: Usuario): void&#10;+ enviarMensaje(remitente: Usuario, mensaje: String): void&#10;+ getParticipantes(): Set&lt;Usuario&gt;" style="text;html=0;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontColor=#17253A;fontSize=17;align=left;verticalAlign=top;spacingLeft=13;spacingTop=2;strokeColor=none;fillColor=none;" vertex="1" parent="cell8">
+          <mxGeometry x="0" y="132" width="850" height="99" as="geometry" />
+        </mxCell>
+        <mxCell id="cell14" value="" style="rounded=1;html=0;arcSize=7;whiteSpace=wrap;fillColor=#FFFFFF;strokeColor=#C3934D;strokeWidth=2;container=1;collapsible=0;connectable=1;" vertex="1" parent="1">
+          <mxGeometry x="1155" y="565" width="830" height="312" as="geometry" />
+        </mxCell>
+        <mxCell id="cell15" value="«final»&#10;Usuario" style="rounded=0;whiteSpace=wrap;html=0;fontFamily=Arial;fontColor=#17253A;fontSize=19;fontStyle=1;align=center;verticalAlign=middle;fillColor=#FFF3DF;strokeColor=none;spacing=5;" vertex="1" parent="cell14">
+          <mxGeometry x="2" y="2" width="826" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="cell16" value="" style="rounded=0;fillColor=#C3934D;strokeColor=none;" vertex="1" parent="cell14">
+          <mxGeometry x="0" y="75" width="830" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="cell17" value="- nombre: String {readOnly}&#10;- mediador: MediadorChat {readOnly}&#10;- recibidos: List&lt;String&gt;" style="text;html=0;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontColor=#17253A;fontSize=17;align=left;verticalAlign=top;spacingLeft=13;spacingTop=2;strokeColor=none;fillColor=none;" vertex="1" parent="cell14">
+          <mxGeometry x="0" y="83" width="830" height="81" as="geometry" />
+        </mxCell>
+        <mxCell id="cell18" value="" style="rounded=0;fillColor=#C3934D;strokeColor=none;" vertex="1" parent="cell14">
+          <mxGeometry x="0" y="175" width="830" height="2" as="geometry" />
+        </mxCell>
+        <mxCell id="cell19" value="+ Usuario(nombre: String, mediador: MediadorChat)&#10;+ getNombre(): String&#10;+ enviar(mensaje: String): void&#10;+ recibir(remitente: String, mensaje: String): void&#10;+ getRecibidos(): List&lt;String&gt;" style="text;html=0;whiteSpace=wrap;overflow=hidden;fontFamily=Arial;fontColor=#17253A;fontSize=17;align=left;verticalAlign=top;spacingLeft=13;spacingTop=2;strokeColor=none;fillColor=none;" vertex="1" parent="cell14">
+          <mxGeometry x="0" y="182" width="830" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="cell20" value="implementa" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#52657D;strokeWidth=2;dashed=1;dashPattern=7 5;endArrow=block;endFill=0;endSize=17;exitX=0.45;exitY=0;exitDx=0;exitDy=0;entryX=0.28;entryY=1;entryDx=0;entryDy=0;fontSize=14;fontColor=#58677C;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="cell8" target="cell3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cell21" value="utiliza" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#52657D;strokeWidth=2;endArrow=open;endFill=0;endSize=15;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.77;entryY=1;entryDx=0;entryDy=0;fontSize=14;fontColor=#58677C;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="cell14" target="cell3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cell22" value="administra 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=0;strokeColor=#52657D;strokeWidth=2;startArrow=diamond;startFill=0;startSize=17;endArrow=none;exitX=1;exitY=0.62;exitDx=0;exitDy=0;entryX=0;entryY=0.62;entryDx=0;entryDy=0;fontSize=14;fontColor=#58677C;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="cell8" target="cell14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nota-colecciones" value="participantes y recibidos: referencia final; colección mutable.&#10;Los métodos getParticipantes() y getRecibidos() devuelven vistas no modificables de esas colecciones." style="shape=note;whiteSpace=wrap;html=0;size=20;fillColor=#FFF9E6;strokeColor=#C3934D;fontFamily=Arial;fontColor=#17253A;fontSize=17;align=left;verticalAlign=middle;spacing=15;" vertex="1" parent="1">
+          <mxGeometry x="80" y="930" width="1905" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
