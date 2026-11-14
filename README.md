@@ -25,7 +25,7 @@
 
 **Ejemplo:** `DemoBuilder` crea un automóvil personalizado y otro a través del `Director`.
 
-**Diagrama UML:** [`diagramas/01-builder.puml`](diagramas/01-builder.puml).
+**Diagrama UML:** [`diagramas/01-builder.drawio`](diagramas/01-builder.drawio).
 
 ## 2. Bridge — notificaciones multiplataforma
 
@@ -38,7 +38,7 @@
 
 **Ejemplo:** `DemoBridge` muestra notificaciones y cambia una alerta de web a móvil durante la ejecución.
 
-**Diagrama UML:** [`diagramas/02-bridge.puml`](diagramas/02-bridge.puml).
+**Diagrama UML:** [`diagramas/02-bridge.drawio`](diagramas/02-bridge.drawio).
 
 ## 3. Mediator — chat grupal
 
@@ -51,7 +51,7 @@
 
 **Ejemplo:** `DemoMediator` registra tres usuarios, difunde mensajes y comprueba que un usuario retirado ya no recibe nuevas comunicaciones.
 
-**Diagrama UML:** [`diagramas/03-mediator.puml`](diagramas/03-mediator.puml).
+**Diagrama UML:** [`diagramas/03-mediator.drawio`](diagramas/03-mediator.drawio).
 
 ## Estructura del proyecto
 
@@ -60,23 +60,21 @@ Actividad_1/
 ├── pom.xml
 ├── README.md
 ├── diagramas/
-│   ├── 01_Builder.drawio
-│   ├── 02_Bridge.drawio
-│   └── 03_Mediator.drawio
+│   ├── 01-builder.drawio
+│   ├── 02-bridge.drawio
+│   └── 03-mediator.drawio
 └── src/
-    ├── main/java/co/edu/unasabana/actividad1/
-    │   ├── Main.java
-    │   ├── builder/ (Builder, AutomovilBuilder, Automovil, Director, DemoBuilder)
-    │   ├── bridge/ (Plataforma, 3 plataformas, Notificacion, 4 tipos, DemoBridge)
-    │   └── mediator/ (MediadorChat, SalaChat, Usuario, DemoMediator)
-    └── test/java/co/edu/unasabana/actividad1/
-        └── PruebasActividad.java
+    └── main/java/co/edu/unasabana/actividad1/
+        ├── Main.java
+        ├── builder/ (Builder, AutomovilBuilder, Automovil, Director, DemoBuilder)
+        ├── bridge/ (Plataforma, 3 plataformas, Notificacion, 4 tipos, DemoBridge)
+        └── mediator/ (MediadorChat, SalaChat, Usuario, DemoMediator)
 ```
 
 ## Cómo ejecutar en Windows (PowerShell)
 
-1. Extraer el ZIP en `C:\Users\jefer\Documents\Diplomado Arquitectura\Actividad_1` (la carpeta raíz debe contener `pom.xml`).
-2. Abrir la terminal en esa carpeta y ejecutar los comandos:
+1. Clonar el repositorio o descargar y extraer el ZIP.
+2. Con Java (JDK 8 o superior) y Maven instalados y disponibles en el PATH, abrir la terminal en la carpeta que contiene `pom.xml` y ejecutar:
 
 ```powershell
 mvn -q compile
@@ -85,26 +83,15 @@ java -cp target/classes co.edu.unasabana.actividad1.Main
 
 También puede ejecutarse desde IntelliJ IDEA, Eclipse o VS Code abriendo el proyecto Maven y ejecutando `Main.java`.
 
-### Cómo ejecutar las pruebas sin librerías adicionales
-
-`PruebasActividad` utiliza `assert` de Java, por lo que requiere habilitar las aserciones con `-ea`. Con `javac` y `java` en el PATH, desde la raíz del proyecto:
-
-```powershell
-mvn -q test-compile
-java -ea -cp "target/classes;target/test-classes" co.edu.unasabana.actividad1.PruebasActividad
-```
-
-> Aviso: las pruebas son autónomas, no dependen de JUnit. Maven `test` por sí solo **no** ejecuta este `main` de pruebas; usar la instrucción anterior.
-
 ## Cómo visualizar los diagramas
 
-Los archivos `.puml` contienen el código PlantUML de los tres diagramas de clases. Abrirlos en una extensión PlantUML de VS Code / IntelliJ o pegarlos en [PlantUML Online](https://www.plantuml.com/plantuml/) para verlos y exportarlos como PNG o SVG.
+Los archivos `.drawio` contienen los tres diagramas de clases editables. Para visualizarlos, abrir [diagrams.net](https://app.diagrams.net/), seleccionar **Abrir diagrama existente** y elegir un archivo de la carpeta `diagramas/`. También se pueden abrir con la aplicación de escritorio de draw.io o una extensión compatible en VS Code, y exportar como PNG, SVG o PDF.
 
 ## Correspondencia con la rúbrica
 
 - **Identificación:** los tres patrones se indican con su categoría y justificación.
 - **Diagramas de clases:** tres fuentes UML documentan atributos, operaciones, generalización, realización, asociación y dependencias.
-- **Código funcional:** los tres escenarios tienen clases independientes, ejemplos ejecutables y pruebas de comportamiento.
+- **Código funcional:** los tres escenarios tienen clases independientes y ejemplos ejecutables desde `Main.java`.
 
 ## Decisiones y límites
 
